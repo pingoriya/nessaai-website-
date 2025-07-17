@@ -64,136 +64,166 @@ const PricingSection = () => {
   ];
 
   return (
-    <section id="pricing" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Simple, Transparent{' '}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Pricing
-            </span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Choose the perfect plan for your business. All plans include a 14-day free trial 
-            and 30-day money-back guarantee.
-          </p>
+    // <section id="pricing" className="py-20 bg-gray-50">
+    //   <div className="max-w-7xl mx-auto px-6">
+    //     <div className="text-center mb-16">
+    //       <h2 className="text-4xl font-bold text-gray-900 mb-6">
+    //         Simple, Transparent{' '}
+    //         <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+    //           Pricing
+    //         </span>
+    //       </h2>
+    //       <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+    //         Choose the perfect plan for your business. All plans include a 14-day free trial
+    //         and 30-day money-back guarantee.
+    //       </p>
 
-          {/* Billing Toggle */}
-          <div className="flex items-center justify-center space-x-4">
-            <span className={`font-medium ${!isAnnual ? 'text-gray-900' : 'text-gray-600'}`}>
-              Monthly
-            </span>
-            <button
-              onClick={() => setIsAnnual(!isAnnual)}
-              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-200 ${
-                isAnnual ? 'bg-blue-600' : 'bg-gray-300'
-              }`}
-            >
-              <span
-                className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-200 ${
-                  isAnnual ? 'translate-x-6' : 'translate-x-1'
-                }`}
-              />
-            </button>
-            <span className={`font-medium ${isAnnual ? 'text-gray-900' : 'text-gray-600'}`}>
-              Annual
-            </span>
-            {isAnnual && (
-              <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm font-medium">
-                Save 20%
-              </span>
-            )}
-          </div>
+    //       {/* Billing Toggle */}
+    //       <div className="flex items-center justify-center space-x-4">
+    //         <span className={`font-medium ${!isAnnual ? 'text-gray-900' : 'text-gray-600'}`}>
+    //           Monthly
+    //         </span>
+    //         <button
+    //           onClick={() => setIsAnnual(!isAnnual)}
+    //           className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-200 ${isAnnual ? 'bg-blue-600' : 'bg-gray-300'
+    //             }`}
+    //         >
+    //           <span
+    //             className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-200 ${isAnnual ? 'translate-x-6' : 'translate-x-1'
+    //               }`}
+    //           />
+    //         </button>
+    //         <span className={`font-medium ${isAnnual ? 'text-gray-900' : 'text-gray-600'}`}>
+    //           Annual
+    //         </span>
+    //         {isAnnual && (
+    //           <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm font-medium">
+    //             Save 20%
+    //           </span>
+    //         )}
+    //       </div>
+    //     </div>
+
+    //     {/* Pricing Cards */}
+    //     {/* Pricing Card - Enterprise Only */}
+    //     <div className="flex justify-center">
+    //       <div className="w-full max-w-md bg-white rounded-2xl shadow-lg border-2 border-blue-500 p-8">
+    //         <div className="text-center mb-8">
+    //           <h3 className="text-2xl font-bold text-gray-900 mb-2">Enterprise</h3>
+    //           <p className="text-gray-600 mb-6">Complete solution for large organizations</p>
+
+    //           <div className="mb-6">
+    //             <span className="text-5xl font-bold text-gray-900">
+    //               ${isAnnual ? 399 : 399}
+    //             </span>
+    //             <span className="text-gray-600 ml-2">/month</span>
+    //             {isAnnual && (
+    //               <div className="text-sm text-gray-500 mt-1">
+    //                 Billed annually (${399 * 12}/year)
+    //               </div>
+    //             )}
+    //           </div>
+
+    //           <Button className="w-full py-3 rounded-lg font-semibold transition-all duration-200 bg-blue-600 hover:bg-blue-700 text-white">
+    //             Contact Sales
+    //           </Button>
+    //         </div>
+
+    //         {/* Features List */}
+    //         <div className="space-y-4">
+    //           {[
+    //             'Unlimited users',
+    //             'Unlimited data sources',
+    //             'Advanced analytics',
+    //             'Dedicated support',
+    //             'Custom dashboards',
+    //             'API access',
+    //             'Advanced ML models',
+    //             'White-label reports'
+    //           ].map((feature, idx) => (
+    //             <div key={idx} className="flex items-center space-x-3">
+    //               <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
+    //               <span className="text-gray-900">{feature}</span>
+    //             </div>
+    //           ))}
+    //         </div>
+    //       </div>
+    //     </div>
+
+
+    //     {/* Enterprise Contact */}
+    //     <div className="mt-16 text-center">
+    //       <div className="bg-white rounded-2xl shadow-lg p-8 max-w-2xl mx-auto">
+    //         <h3 className="text-2xl font-bold text-gray-900 mb-4">
+    //           Need a Custom Solution?
+    //         </h3>
+    //         <p className="text-gray-600 mb-6">
+    //           Get in touch with our enterprise team for custom pricing,
+    //           dedicated support, and tailored features.
+    //         </p>
+    //         <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold">
+    //           Contact Enterprise Sales
+    //         </Button>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </section>
+    <section id="pricing" className="py-20 bg-gradient-to-b from-gray-50 via-white to-gray-100">
+  <div className="max-w-3xl mx-auto px-6 text-center mb-16">
+    <h2 className="text-4xl font-bold text-gray-900 mb-4">
+      Enterprise <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Plan</span>
+    </h2>
+    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+      A complete AI automation platform designed for scale. Get dedicated support, white-glove onboarding, and advanced capabilities.
+    </p>
+  </div>
+
+  {/* Card */}
+  <div className="flex justify-center px-4">
+    <div className="w-full max-w-xl bg-white border-2 border-blue-600 rounded-2xl shadow-xl p-10 text-left">
+      <div className="mb-6">
+        <div className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mb-4">
+          Best for Scale
         </div>
+        <h3 className="text-3xl font-bold text-gray-900">Enterprise</h3>
+        <p className="text-gray-600 mt-2 mb-6">Complete solution for large organizations</p>
 
-        {/* Pricing Cards */}
-        <div className="grid lg:grid-cols-3 gap-8">
-          {plans.map((plan, index) => (
-            <div
-              key={plan.name}
-              className={`relative bg-white rounded-2xl shadow-lg border-2 transition-all duration-300 hover:shadow-xl ${
-                plan.popular 
-                  ? 'border-blue-500 transform scale-105' 
-                  : 'border-gray-200 hover:border-blue-300'
-              }`}
-            >
-              {plan.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center space-x-1">
-                    <Star className="w-4 h-4" />
-                    <span>Most Popular</span>
-                  </div>
-                </div>
-              )}
-
-              <div className="p-8">
-                {/* Plan Header */}
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                  <p className="text-gray-600 mb-6">{plan.description}</p>
-                  
-                  <div className="mb-6">
-                    <span className="text-5xl font-bold text-gray-900">
-                      ${isAnnual ? plan.annualPrice : plan.monthlyPrice}
-                    </span>
-                    <span className="text-gray-600 ml-2">/month</span>
-                    {isAnnual && (
-                      <div className="text-sm text-gray-500 mt-1">
-                        Billed annually (${plan.annualPrice * 12}/year)
-                      </div>
-                    )}
-                  </div>
-
-                  <Button 
-                    className={`w-full py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 ${
-                      plan.popular
-                        ? 'bg-blue-600 hover:bg-blue-700 text-white'
-                        : 'bg-gray-100 hover:bg-gray-200 text-gray-900'
-                    }`}
-                  >
-                    {plan.cta}
-                  </Button>
-                </div>
-
-                {/* Features List */}
-                <div className="space-y-4">
-                  {plan.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-3">
-                      {feature.included ? (
-                        <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
-                      ) : (
-                        <X className="w-5 h-5 text-gray-400 flex-shrink-0" />
-                      )}
-                      <span className={`${
-                        feature.included ? 'text-gray-900' : 'text-gray-500'
-                      }`}>
-                        {feature.name}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
+        <div className="text-5xl font-bold text-gray-900 mb-1">
+          ${isAnnual ? 399 : 399}
+          <span className="text-xl font-normal text-gray-600">/month</span>
         </div>
+        {isAnnual && (
+          <p className="text-gray-500 text-sm mb-4">Billed annually (${399 * 12}/year)</p>
+        )}
 
-        {/* Enterprise Contact */}
-        <div className="mt-16 text-center">
-          <div className="bg-white rounded-2xl shadow-lg p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Need a Custom Solution?
-            </h3>
-            <p className="text-gray-600 mb-6">
-              Get in touch with our enterprise team for custom pricing, 
-              dedicated support, and tailored features.
-            </p>
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold">
-              Contact Enterprise Sales
-            </Button>
-          </div>
-        </div>
+        <Button className="w-full py-3 bg-blue-600 text-white hover:bg-blue-700 rounded-lg text-lg font-semibold">
+          Contact Sales
+        </Button>
       </div>
-    </section>
+
+      <hr className="my-6 border-gray-200" />
+
+      {/* Features */}
+      <div className="space-y-4">
+        {[
+          'Unlimited users',
+          'Unlimited data sources',
+          'Advanced analytics',
+          'Dedicated support',
+          'Custom dashboards',
+          'API access',
+          'Advanced ML models',
+          'White-label reports'
+        ].map((feature, idx) => (
+          <div key={idx} className="flex items-center space-x-3">
+            <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
+            <span className="text-gray-800">{feature}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
   );
 };
 
