@@ -13,7 +13,7 @@ Empower your Med Spa, Dental Office, Real Estate agency, or service business wit
 - [Watch AI Webinar](#see-nessaai-in-action)
 - Trusted by **10,000+ businesses** in:
   - 🏥 Healthcare
-  - 🏢 Real Estate
+  - 🏢 Real Estat
   - 🧰 Service
   - 🧠 Enterprise
 
