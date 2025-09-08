@@ -34,23 +34,17 @@ const HeroSection = () => {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-200 hover:scale-105 flex items-center group shadow-xl">
-                Start Free Trial
+                Book a free Demo
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               
-              <Link to="/webinar">
-                <Button variant="outline" className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-200 hover:scale-105 flex items-center group">
-                  <Play className="mr-2 w-5 h-5" />
-                  Watch AI Webinar
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </Link>
+              
             </div>
 
             <div className="pt-8">
-              <div className="text-sm text-gray-500 mb-3">Trusted by 10,000+ businesses</div>
+              <div className="text-sm text-gray-500 mb-3">Neesa integrates directly with Jane, Eaglesoft, Dentrix, OpenDental, Accuro, Telnyx, RingCentral, and 70+ other providers.</div>
               <div className="flex items-center space-x-6 opacity-60">
-                {['Enterprise', 'Healthcare', 'Real Estate', 'Service'].map((industry) => (
+                {['Dental practices', 'Med Spa', 'Medical Practices', 'Chiropractors', ].map((industry) => (
                   <div key={industry} className="px-4 py-2 bg-gray-100 rounded-lg text-sm font-medium text-gray-600">
                     {industry}
                   </div>
