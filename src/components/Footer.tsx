@@ -13,8 +13,7 @@ const Footer = () => {
     solutions: [
       { name: 'Med Spas', href: '#' },
       { name: 'Dental Offices', href: '#' },
-      { name: 'Real Estate', href: '#' },
-      { name: 'Service Businesses', href: '#' }
+      
     ],
     resources: [
       { name: 'Documentation', href: '#' },
@@ -53,23 +52,23 @@ const Footer = () => {
             </div>
             
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Empowering businesses with AI-powered analytics to automate workflows, 
-              capture leads 24/7, and transform insights into revenue growth.
+               Neesa integrates directly with Jane, Eaglesoft, Dentrix, OpenDental, Accuro, Telnyx, RingCentral, and 70+ other providers.
+
             </p>
 
             {/* Contact Info */}
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-blue-400" />
-                <span className="text-gray-300">hello@neesa.ai</span>
+                <span className="text-gray-300">support@neesa.ai </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-blue-400" />
-                <span className="text-gray-300">+1 (555) 123-4567</span>
+                <span className="text-gray-300">+1 (833) 909-3326</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-blue-400" />
-                <span className="text-gray-300">San Francisco, CA</span>
+                <span className="text-gray-300">Toronto, Canada</span>
               </div>
             </div>
           </div>
@@ -197,7 +196,7 @@ const Footer = () => {
             </div>
 
             <span className="text-gray-400 text-sm">
-              © 2024 NEESA AI. All rights reserved.
+              © 2025 NEESA AI. All rights reserved.
             </span>
           </div>
         </div>

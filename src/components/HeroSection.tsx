@@ -22,14 +22,14 @@ const HeroSection = () => {
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
-              Transform Your Business with{' '}
+              Transform your Dental practice with{' '}
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                AI Intelligence
+                neesa ai
               </span>
             </h1>
             
             <p className="text-xl text-gray-600 leading-relaxed">
-              Empower your Med Spa, Dental Office, Real Estate agency, or service business with intelligent AI agents that automate workflows, capture leads 24/7, and turn insights into revenue.
+              Neesa Al is redefining front-line communication and coordination in the healthcare industry by automating critical admin tasks for dental and homecare clinics. Our Al-powered virtual assistant handles patient communication, appointment scheduling, insurance verification, and field coordination with unmatched efficiency and ROI. We're not just another "Al receptionist"-we're the operating system for modern clinical administration.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

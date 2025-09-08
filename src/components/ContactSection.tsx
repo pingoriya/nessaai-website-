@@ -34,13 +34,13 @@ const ContactSection = () => {
     {
       icon: Phone,
       title: 'Call Us',
-      content: '+1 (555) 123-4567',
+      content: '+1 (833) 909-3326',
       description: 'Mon-Fri, 9AM-6PM EST'
     },
     {
       icon: MapPin,
       title: 'Visit Us',
-      content: 'San Francisco, CA',
+      content: 'Toronto, Canada ',
       description: 'Schedule an office visit'
     },
     {
