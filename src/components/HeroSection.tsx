@@ -1,8 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Play, Zap, TrendingUp } from 'lucide-react';
+import { ArrowRight, Zap, TrendingUp } from 'lucide-react';
 import { Button } from './ui/button';
-import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -11,6 +9,14 @@ const HeroSection = () => {
     setIsLoaded(true);
   }, []);
 
+  // Scroll handler
+  const handleScrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 flex items-center pt-16">
       <div className="max-w-7xl mx-auto px-6 py-20">
@@ -18,7 +24,7 @@ const HeroSection = () => {
           <div className={`space-y-8 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium animate-pulse">
               <Zap className="w-4 h-4 mr-2" />
-              AI-Powered Business Automation
+              AI-Powered Medical Business 
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
@@ -33,19 +39,20 @@ const HeroSection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-200 hover:scale-105 flex items-center group shadow-xl">
+              <Button 
+                onClick={handleScrollToContact} 
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-200 hover:scale-105 flex items-center group shadow-xl"
+              >
                 Book a free Demo
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              
-              
             </div>
 
             <div className="pt-8">
-              <div className="text-sm text-gray-500 mb-3">Neesa integrates directly with Jane, Eaglesoft, Dentrix, OpenDental, Accuro, Telnyx, RingCentral, and 70+ other providers.</div>
+              <div className="text-sm text-blue-500 mb-3">Neesa supporting 200+ businesses</div>
               <div className="flex items-center space-x-6 opacity-60">
-                {['Dental practices', 'Med Spa', 'Medical Practices', 'Chiropractors', ].map((industry) => (
-                  <div key={industry} className="px-4 py-2 bg-gray-100 rounded-lg text-sm font-medium text-gray-600">
+                {['Dental practices', 'Med Spa', 'Medical Practices', 'Chiropractors'].map((industry) => (
+                  <div key={industry} className="px-4 py-2 bg-purple-100 rounded-lg text-sm font-medium text-gray-600">
                     {industry}
                   </div>
                 ))}

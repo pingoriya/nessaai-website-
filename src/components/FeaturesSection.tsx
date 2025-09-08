@@ -204,13 +204,16 @@ const FeaturesSection: React.FC = () => {
 
                     {/* Logos */}
                     {feature.logos && (
-                      <div className="flex mt-4 justify-between items-center w-full">
+                      <div className="flex mt-4 gap-4 justify-center items-center">
                         {feature.logos.map((logo, i) => (
-                          <div key={i} className="flex-1 flex justify-center">
+                          <div
+                            key={i}
+                            className="bg-white rounded-xl shadow-sm p-2 border border-gray-200 flex items-center justify-center"
+                          >
                             <img
                               src={logo.src}
                               alt={logo.alt}
-                              className="h-12 w-full object-contain"
+                              className="h-10 w-auto object-contain"
                             />
                           </div>
                         ))}
