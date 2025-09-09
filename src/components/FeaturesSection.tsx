@@ -219,7 +219,7 @@ const FeaturesSection: React.FC = () => {
                             <div
                               key={i}
                               className="flex-1 flex items-center justify-center bg-white rounded-xl shadow-sm p-2 border border-gray-200 
-                              transition-all duration-300 hover:scale-105 hover:shadow-md hover:border-gray-400"
+                              transition-all duration-300 hover:scale-100 hover:shadow-md hover:border-gray-400"
                             >
                               <img
                                 src={logo.src}
