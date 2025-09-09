@@ -38,7 +38,7 @@ const FeaturesSection: React.FC = () => {
       stats: '70+ integrations',
       color: 'indigo',
       logos: [
-        { src: '/lovable-uploads/dentrix.jpg', alt: 'Dentrix' },
+        { src: '/lovable-uploads/dentrix.jpeg', alt: 'Dentrix' },
         { src: '/lovable-uploads/edgesoft.jpg', alt: 'Eaglesoft' },
         { src: '/lovable-uploads/opendental.jpg', alt: 'OpenDental' },
       ],
@@ -164,14 +164,16 @@ const FeaturesSection: React.FC = () => {
             return (
               <div
                 key={index}
-                className={`group cursor-pointer transition-transform duration-300 ${isActive ? 'scale-105' : 'hover:scale-102'
-                  }`}
+                className={`group cursor-pointer transition-transform duration-300 ${
+                  isActive ? 'scale-105' : 'hover:scale-102'
+                }`}
                 onMouseEnter={() => setActiveFeature(index)}
                 onMouseLeave={() => setActiveFeature(null)}
               >
                 <div
-                  className={`bg-white rounded-3xl p-8 shadow-lg border-2 transition-all duration-300 h-full flex flex-col justify-between ${isActive ? 'border-blue-200 shadow-2xl' : 'border-transparent hover:shadow-xl'
-                    }`}
+                  className={`bg-white rounded-3xl p-8 shadow-lg border-2 transition-all duration-300 h-full flex flex-col justify-between ${
+                    isActive ? 'border-blue-200 shadow-2xl' : 'border-transparent hover:shadow-xl'
+                  }`}
                 >
                   {/* Icon */}
                   <div
@@ -188,10 +190,13 @@ const FeaturesSection: React.FC = () => {
 
                   {/* Expanded Details */}
                   <div
-                    className={`transition-all duration-300 overflow-hidden ${isActive ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                      }`}
+                    className={`transition-all duration-300 overflow-hidden ${
+                      isActive ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                    }`}
                   >
-                    <p className="text-gray-700 mb-4 font-medium leading-relaxed">{feature.details}</p>
+                    <p className="text-gray-700 mb-4 font-medium leading-relaxed">
+                      {feature.details}
+                    </p>
 
                     {/* Stats */}
                     <div
@@ -204,19 +209,70 @@ const FeaturesSection: React.FC = () => {
 
                     {/* Logos */}
                     {feature.logos && (
-                      <div className="flex mt-4 gap-4 justify-center items-center">
-                        {feature.logos.map((logo, i) => (
-                          <div
-                            key={i}
-                            className="bg-white rounded-xl shadow-sm p-2 border border-gray-200 flex items-center justify-center"
-                          >
-                            <img
-                              src={logo.src}
-                              alt={logo.alt}
-                              className="h-10 w-auto object-contain"
-                            />
-                          </div>
-                        ))}
+                      <div className="flex mt-4 justify-between items-center gap-4">
+                        {feature.logos.map((logo, i) => {
+                          const isDentrix = logo.alt.toLowerCase().includes('dentrix');
+                          const isOpenDental = logo.alt.toLowerCase().includes('opendental');
+                          const isEaglesoft = logo.alt.toLowerCase().includes('eaglesoft');
+
+                          const logoElement = (
+                            <div
+                              key={i}
+                              className="flex-1 flex items-center justify-center bg-white rounded-xl shadow-sm p-2 border border-gray-200 
+                              transition-all duration-300 hover:scale-105 hover:shadow-md hover:border-gray-400"
+                            >
+                              <img
+                                src={logo.src}
+                                alt={logo.alt}
+                                className="h-12 w-auto object-contain"
+                              />
+                            </div>
+                          );
+
+                          if (isDentrix) {
+                            return (
+                              <a
+                                key={i}
+                                href="https://www.dentrix.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex-1"
+                              >
+                                {logoElement}
+                              </a>
+                            );
+                          }
+
+                          if (isOpenDental) {
+                            return (
+                              <a
+                                key={i}
+                                href="https://www.opendental.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex-1"
+                              >
+                                {logoElement}
+                              </a>
+                            );
+                          }
+
+                          if (isEaglesoft) {
+                            return (
+                              <a
+                                key={i}
+                                href="https://www.pattersondental.com/eaglesoft"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex-1"
+                              >
+                                {logoElement}
+                              </a>
+                            );
+                          }
+
+                          return logoElement;
+                        })}
                       </div>
                     )}
                   </div>
