@@ -24,7 +24,7 @@ const Index = () => {
       <SocialProof />
       <FeaturesSection />
       <ProductDemo />
-      <PricingSection />
+      {/* <PricingSection /> */}
       <ResourcesHub />
       <ContactSection />
       <Footer />
