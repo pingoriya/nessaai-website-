@@ -142,20 +142,30 @@ const ResourcesHub = () => {
         </div>
 
         {/* Calendly Embed Section */}
-        <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            Book an Appointment
-          </h3>
-          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Select a date and time that works best for you.
-          </p>
+<div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8">
+  <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
+    Select Your Free Demo Today
+  </h3>
+  <p className="text-gray-600 mb-6 max-w-2xl mx-auto text-center">
+    Select a date and time that works best for you.
+  </p>
 
-          <div
-            className="calendly-inline-widget w-full"
-            data-url="https://calendly.com/oneaway/neesa"
-            style={{ minWidth: "320px", height: "700px" }}
-          ></div>
-        </div>
+  {/* Center Calendly */}
+  <div className="flex justify-center">
+    <div
+      className="calendly-inline-widget"
+      data-url="https://calendly.com/oneaway/neesa"
+      style={{
+        minWidth: "320px",
+        height: "620px",
+        width: "100%",
+        maxWidth: "800px", // keeps it centered instead of stretching
+      }}
+    ></div>
+  </div>
+</div>
+
+
       </div>
     </section>
   );
