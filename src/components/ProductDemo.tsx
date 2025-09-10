@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { BarChart3, Bot, TrendingUp, Users, PhoneCall } from "lucide-react";
 
 const ProductDemo = () => {
   const [activeTab, setActiveTab] = useState(null);
+  const [showPhone, setShowPhone] = useState(false); // Track phone number visibility
 
   const tabs = [
     {
@@ -108,11 +109,11 @@ const ProductDemo = () => {
                   Instead of reading about it, why not experience it? Call Neesa directly, ask her questions, and see how she can streamline your practice with efficiency and care.
                 </p>
                 <button
-                  onClick={() => alert("Calling Neesa...")}
+                  onClick={() => setShowPhone(!showPhone)}
                   className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-200 hover:scale-105 flex items-center space-x-2 shadow-lg w-full justify-center"
                 >
                   <PhoneCall className="w-5 h-5" />
-                  <span>Call Neesa Now - she'll Explain Everything</span>
+                  <span>{showPhone ? "Call: +1-833-909-3326" : "Call Neesa Now - She'll Explain Everything"}</span>
                 </button>
                 <p className="text-sm text-gray-500 mt-2 text-center">
                   No signup needed • Instant Call • Book in minutes

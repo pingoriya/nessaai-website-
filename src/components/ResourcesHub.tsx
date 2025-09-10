@@ -42,7 +42,6 @@ const ResourcesHub = () => {
 
   const categories = ["All", "Documentation", "Training", "Research", "Case Study"];
 
-  // Load Calendly script only once
   useEffect(() => {
     const existingScript = document.getElementById("calendly-script");
     if (!existingScript) {
@@ -69,18 +68,6 @@ const ResourcesHub = () => {
             Discover guides, case studies, and training materials to help you get
             the most out of AI-powered analytics.
           </p>
-        </div>
-
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center mb-12">
-          {categories.map((category) => (
-            <button
-              key={category}
-              className="px-6 py-2 mx-2 my-1 rounded-full font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-blue-100 hover:text-blue-700"
-            >
-              {category}
-            </button>
-          ))}
         </div>
 
         {/* Resources Grid */}
@@ -117,55 +104,32 @@ const ResourcesHub = () => {
           })}
         </div>
 
-        {/* Newsletter Signup */}
-        <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 text-center mb-20">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            Stay Updated with Latest Insights
-          </h3>
-          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Get weekly analytics tips, industry trends, and product updates
-            delivered to your inbox.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none"
-            />
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
-              Subscribe
-            </button>
-          </div>
-          <p className="text-xs text-gray-500 mt-3">
-            No spam. Unsubscribe anytime.
-          </p>
-        </div>
-
         {/* Calendly Embed Section */}
-<div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8">
-  <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
-    Select Your Free Demo Today
-  </h3>
-  <p className="text-gray-600 mb-6 max-w-2xl mx-auto text-center">
-    Select a date and time that works best for you.
-  </p>
+        <div
+          id="calendar" // ✅ Make Hero scroll target
+          className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8"
+        >
+          <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
+            Select Your Free Demo Today
+          </h3>
+          <p className="text-gray-600 mb-6 max-w-2xl mx-auto text-center">
+            Select a date and time that works best for you.
+          </p>
 
-  {/* Center Calendly */}
-  <div className="flex justify-center">
-    <div
-      className="calendly-inline-widget"
-      data-url="https://calendly.com/oneaway/neesa"
-      style={{
-        minWidth: "320px",
-        height: "620px",
-        width: "100%",
-        maxWidth: "800px", // keeps it centered instead of stretching
-      }}
-    ></div>
-  </div>
-</div>
-
-
+          {/* Center Calendly */}
+          <div className="flex justify-center">
+            <div
+              className="calendly-inline-widget"
+              data-url="https://calendly.com/oneaway/neesa"
+              style={{
+                minWidth: "320px",
+                height: "620px",
+                width: "100%",
+                maxWidth: "800px",
+              }}
+            ></div>
+          </div>
+        </div>
       </div>
     </section>
   );
