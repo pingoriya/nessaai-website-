@@ -37,7 +37,7 @@ const HeroSection = () => {
 
             {/* Heading */}
             <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold text-gray-900 leading-tight break-words">
-              Transform your Dental practice with{" "}
+              Transform your Healthcare Practice with{" "}
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 neesa ai
               </span>

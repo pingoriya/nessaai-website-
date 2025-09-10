@@ -1,6 +1,7 @@
-
-import React from 'react';
-import { FileText, Video, Download, ExternalLink } from 'lucide-react';
+import React, { useState } from 'react';
+import { FileText, Video, Download, ExternalLink, Calendar } from 'lucide-react';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
 
 const ResourcesHub = () => {
   const resources = [
@@ -40,9 +41,38 @@ const ResourcesHub = () => {
 
   const categories = ['All', 'Documentation', 'Training', 'Research', 'Case Study'];
 
+  // ---- Appointment State ----
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const slots = ["10:00 AM", "11:30 AM", "2:00 PM", "3:30 PM", "5:00 PM"];
+  const [selectedSlot, setSelectedSlot] = useState<string | null>(null);
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<string | null>(null);
+
+  // ---- Submit Booking ----
+  const handleBooking = async () => {
+    if (!selectedDate || !selectedSlot || !email) {
+      setStatus("⚠️ Please fill all fields.");
+      return;
+    }
+
+    try {
+      // Example: Send to EmailJS / backend API
+      // Here we just simulate success
+      console.log("Booking:", { email, date: selectedDate, slot: selectedSlot });
+
+      setStatus(`✅ Appointment booked! A confirmation has been sent to ${email}`);
+      setSelectedDate(null);
+      setSelectedSlot(null);
+      setEmail("");
+    } catch (error) {
+      setStatus("❌ Failed to book appointment. Try again.");
+    }
+  };
+
   return (
     <section id="resources" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
+        {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
             Resources &{' '}
@@ -69,7 +99,7 @@ const ResourcesHub = () => {
         </div>
 
         {/* Resources Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {resources.map((resource, index) => {
             const Icon = resource.icon;
             return (
@@ -103,7 +133,7 @@ const ResourcesHub = () => {
         </div>
 
         {/* Newsletter Signup */}
-        <div className="mt-16 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 text-center">
+        <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 text-center mb-20">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
             Stay Updated with Latest Insights
           </h3>
@@ -123,6 +153,72 @@ const ResourcesHub = () => {
           <p className="text-xs text-gray-500 mt-3">
             No spam. Unsubscribe anytime.
           </p>
+        </div>
+
+        {/* ---- Appointment Booking Section ---- */}
+        <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 text-center">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4 flex justify-center items-center gap-2">
+            <Calendar className="w-6 h-6 text-blue-600" /> Book an Appointment
+          </h3>
+          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+            Select a date, choose an available slot, and confirm with your email to receive a notification.
+          </p>
+
+          {/* Date Picker */}
+          <div className="flex justify-center mb-6">
+            <DatePicker
+              selected={selectedDate}
+              onChange={(date) => { setSelectedDate(date); setSelectedSlot(null); }}
+              minDate={new Date()} // disable past dates
+              className="px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholderText="Choose a date"
+              dateFormat="MMMM d, yyyy"
+            />
+          </div>
+
+          {/* Slots */}
+          {selectedDate && (
+            <div className="mb-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-4">
+                Available Slots for {selectedDate.toDateString()}
+              </h4>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 justify-center">
+                {slots.map((slot, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setSelectedSlot(slot)}
+                    className={`py-3 px-4 rounded-lg font-medium transition ${
+                      selectedSlot === slot
+                        ? "bg-blue-600 text-white"
+                        : "bg-white border border-gray-300 text-gray-700 hover:bg-blue-100"
+                    }`}
+                  >
+                    {slot}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Email + Confirm */}
+          {selectedDate && selectedSlot && (
+            <div className="max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email for confirmation"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full px-4 py-3 mb-4 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none"
+              />
+              <button
+                onClick={handleBooking}
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+              >
+                Confirm Appointment
+              </button>
+              {status && <p className="mt-4 text-gray-700">{status}</p>}
+            </div>
+          )}
         </div>
       </div>
     </section>

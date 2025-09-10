@@ -199,8 +199,13 @@ const Footer = () => {
               © 2025 NEESA AI. All rights reserved.
             </span>
           </div>
+          
         </div>
+        <span className="text-gray-400 text-sm">
+              Neesa AI | A hanh Consulting Inc. Company | Toronto Canada 1-547-474-1661 
+            </span>
       </div>
+      
     </footer>
   );
 };

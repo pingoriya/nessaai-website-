@@ -28,7 +28,7 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      content: 'hello@analyticspro.com',
+      content: 'support@neesa.ai',
       description: 'Get in touch with our team'
     },
     {
