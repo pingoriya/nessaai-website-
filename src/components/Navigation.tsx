@@ -20,8 +20,8 @@ const Navigation = () => {
   const navItems = [
     { name: 'Platform', href: '#platform' },
     { name: 'Solutions', href: '#solutions' },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'Resources', href: '#resources' },
+    { name: 'Tests Video', href: '#testimonials' },
+    { name: 'Reviews', href: '#resources' },
     { name: 'Contact', href: '#contact' }
   ];
 

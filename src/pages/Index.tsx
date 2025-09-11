@@ -5,7 +5,7 @@ import HeroSection from '../components/HeroSection';
 import FeaturesSection from '../components/FeaturesSection';
 import ProductDemo from '../components/ProductDemo';
 import SocialProof from '../components/SocialProof';
-import PricingSection from '../components/PricingSection';
+import TestimonialVideos from '../components/testimonialvideos';
 import ResourcesHub from '../components/ResourcesHub';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
@@ -24,7 +24,7 @@ const Index = () => {
       <SocialProof />
       <FeaturesSection />
       <ProductDemo />
-      {/* <PricingSection /> */}
+      <TestimonialVideos />
       <ResourcesHub />
       <ContactSection />
       <Footer />
