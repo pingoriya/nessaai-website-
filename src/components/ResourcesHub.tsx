@@ -12,12 +12,14 @@ const ResourcesHub = () => {
     }
   }, []);
 
-  // Testimonial images (add more easily in future)
+  // Testimonials (images + videos together)
   const testimonials = [
-    "/lovable-uploads/test1.jpg",
-    "/lovable-uploads/test2.jpg",
-    "/lovable-uploads/test3.jpg",
-    "/lovable-uploads/test4.jpg",
+    { type: "image", src: "/lovable-uploads/test1.jpg" },
+    { type: "image", src: "/lovable-uploads/test2.jpg" },
+    { type: "image", src: "/lovable-uploads/test3.jpg" },
+    { type: "image", src: "/lovable-uploads/test4.jpg" },
+    { type: "video", src: "https://player.vimeo.com/video/1117493294?autoplay=0&muted=1&loop=1" },
+    { type: "video", src: "https://player.vimeo.com/video/1117494133?autoplay=0&muted=1&loop=1" },
   ];
 
   return (
@@ -39,16 +41,26 @@ const ResourcesHub = () => {
         {/* Horizontal Scrollable Testimonials */}
         <div className="overflow-x-auto">
           <div className="flex space-x-6 pb-4">
-            {testimonials.map((image, index) => (
+            {testimonials.map((item, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-80 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+                className="flex-shrink-0 w-80 h-96 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
               >
-                <img
-                  src={image}
-                  alt={`Testimonial ${index + 1}`}
-                  className="w-full h-auto object-cover"
-                />
+                {item.type === "image" ? (
+                  <img
+                    src={item.src}
+                    alt={`Testimonial ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <iframe
+                    src={item.src}
+                    title={`Testimonial Video ${index + 1}`}
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  />
+                )}
               </div>
             ))}
           </div>
